@@ -1,0 +1,692 @@
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.clearfix:after {
+  display: block;
+  content: " ";
+  clear: both;
+}
+
+body {
+  display: block;
+  height: 100%;
+  margin: auto;
+  font: 300 14px "Roboto", "Helvetica", sans-serif; 
+  letter-spacing: 0.05em; 
+  color: white;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1600px;
+  margin: auto;
+  background: url("http://i.cubeupload.com/Qf41Mf.jpg") no-repeat;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font: 900 32px "Playfair Display", "Times New Roman", serif;
+  text-transform: capitalize;
+  letter-spacing: 0.001em;
+}
+               
+h2 {
+  margin: 0;
+  font: 700 22px "Playfair Display", "Times New Roman", serif;
+  text-transform: uppercase; 
+}
+
+h3 {
+  font: 900 14px "Roboto", "Helvetica", sans-serif;
+  text-transform: uppercase; 
+}
+
+button {
+  color: #00e0d0;
+  background: none;
+  border: 1px solid #00e0d0;
+  font: 400 16px "Hammersmith One", "Arial Black", sans-serif;
+  text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer; 
+  outline: none;
+}
+
+button:hover {
+  background: #00e0d0;
+  color: rgba(255, 255, 255, 1);
+  -webkit-transition: ease-in 0.3s;
+  -o-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+}
+
+h2 + p {
+  font: 400 14px "Playfair Display", "Times New Roman", serif;
+  letter-spacing: 0.075em;
+}
+
+.site-icons {
+  display: inline-block;
+  background: url("http://u.cubeupload.com/Stegur/4desprite.png") no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+.overlays {
+  position: absolute;
+  width: 100%; 
+  background: -webkit-gradient(linear, left top, right top, from(#09052f), to(#311d5e)); 
+  background: -webkit-linear-gradient(left, #09052f, #311d5e); 
+  background: -o-linear-gradient(left, #09052f, #311d5e); 
+  background: linear-gradient(to right, #09052f, #311d5e);
+  opacity: 0.85;
+}
+
+.wrapper-overlay {
+  height: 670px;
+}
+
+/* Стили header */
+
+header {
+  position: relative;
+  width: 940px;
+  height: 670px;
+  margin: auto;
+}
+
+/* Стили nav */
+
+nav {
+  display: inline-block;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.logo {
+  float: left;
+}
+
+.logo-img {
+  width: 44px;
+  height: 50px;
+  margin-top: -10px;
+  vertical-align: middle;
+}
+
+.logo-name {
+  display: inline-block;
+  margin: 8px 0 0 8px;
+  font-size: 30px;
+  font-weight: 100;
+  color: #00e0d0;
+  
+}
+
+.menu {
+  float: right;
+  margin-top: 5px;
+  letter-spacing: 0.025em;
+}
+
+.menu ul li {
+  display: inline;
+  margin-left: 20px;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.menu ul li a {
+  color: white;
+}
+
+.menu ul li a:hover {
+  color: #00e0d0;
+}
+
+/* Стили header-content */
+
+.header-content {
+  margin-top: 110px;
+  text-align: center;
+}
+
+.header-content-discr {
+  margin-top: 20px;
+  margin-bottom: 45px;
+  padding: 0 85px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+}
+
+.header-content button {
+  padding: 9px 14px;
+}
+
+
+/* Слайды */ 
+
+.slider {
+  position: relative;
+  
+  width: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;  
+  opacity: 0;
+}
+
+#slide1:checked~.slide1 {
+  z-index: 2;
+  opacity: 1;
+}
+
+#slide2:checked~.slide2 {
+  z-index: 2;
+  opacity: 1;
+}
+
+#slide3:checked~.slide3 {
+  z-index: 2;
+  opacity: 1;
+}
+
+#slide4:checked~.slide4 {
+  z-index: 2;
+  opacity: 1;
+}
+
+.radio {
+  display: none;
+}
+
+.slider label {
+  position: absolute;
+  top: 395px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid gray;
+  border-radius: 100%;
+  cersor: pointer;  
+  text-align: center;
+  font-size: 0;
+}
+
+.slider label:hover {
+  background: #00e0d0;
+  border: 1px solid #00e0d0;
+}
+
+label:first-of-type {
+  left: 440px;
+}
+
+label:nth-of-type(2) {
+  left: 455px;
+}
+
+label:nth-of-type(3) {
+  left: 470px;
+}
+
+label:last-of-type {
+  left: 485px;
+}
+
+.label-inner {
+  display: inline-block;
+  width: 110%;
+  height: 110%;
+  border-radius: 100%;
+  opacity: 0;
+}
+
+#slide1:checked + label > .label-inner {
+  background: #00e0d0;
+  opacity: 1;
+}
+
+#slide2:checked + label > .label-inner {
+  background: #00e0d0;
+  opacity: 1;
+}
+
+#slide3:checked + label > .label-inner {
+  background: #00e0d0;
+  opacity: 1;
+}
+
+#slide4:checked + label > .label-inner {
+  background: #00e0d0;
+  opacity: 1;
+}
+
+
+
+/* Стили expertise */
+
+.expertise {
+  width: 940px;
+  height: 757px;
+  margin: 0 auto 0 auto;
+  padding: 65px 0 20px 0;
+  text-align: center;
+  color: black;
+}
+
+.expertise-discr {
+  margin-top: 10px;
+}
+
+.expertise-separator {
+  margin-bottom: 30px;
+}
+
+.icons {
+  float: left;
+  width: 33.33%;
+  padding: 30px 0 20px 0;
+}
+
+.icons:first-of-type {
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.icons:nth-of-type(2) {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.icons:nth-of-type(3) {
+  border-left: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+.icons:nth-of-type(5),
+.icons:nth-of-type(4),
+.icons:last-of-type {
+  padding-top: 40px;
+}
+
+.icons:nth-of-type(4) {
+  border-right: 1px solid #e6e6e6;
+}
+
+.icons:last-of-type {
+  border-left: 1px solid #e6e6e6;
+}
+
+.expertise-img-1 {
+  width: 49px;
+  height: 50px;
+  background-position: -49px 0;
+}
+
+.expertise-img-2 {
+  width: 49px;
+  height: 50px;
+  background-position: -104px 0;
+}
+
+.expertise-img-3 {
+  width: 28px;
+  height: 50px;
+  background-position: -158px 0;
+}
+
+.expertise-img-4 {
+  width: 50px;
+  height: 50px;
+  background-position: -191px 0;
+}
+
+.expertise-img-5 {
+  width: 41px;
+  height: 50px;
+  background-position: -246px 0;
+}
+
+.expertise-img-6 {
+  width: 50px;
+  height: 50px;
+  background-position: -292px 0;
+}
+
+.icons h3 {
+  margin-top: 30px;
+}
+
+.icon-discr {
+  margin: 20px 0 10px 0;
+  padding: 0 20px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+}
+
+
+/* Стили our-team */
+
+.our-team-wrapper {
+  position: relative;
+  height: 710px;  
+  text-align: center;
+  background: url("http://i.cubeupload.com/hv8ZLf.jpg") no-repeat;
+}
+
+.our-team-overlay {
+  height: 100%;
+}
+
+.our-team {
+  position: relative;
+  width: 940px;
+  margin: auto;
+  padding-top: 62px;
+  text-align: center;
+}
+
+.our-team-discr {
+  margin-top: 10px;
+}
+ 
+.our-team-separator {
+  margin-bottom: 27px;
+}
+
+.member-wrapper {
+  text-align: justify;
+}
+
+.member {
+  display: inline-block;
+  width: 221px;
+  border: 1px solid rgba(230, 230, 230, 0.5);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.helper {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+}
+
+.member-position {
+  margin: -8px 0 22px 0;
+  color: rgba(250, 250, 250, 0.7);
+  font-size: 13px;
+  letter-spacing: normal;
+}
+
+.member-wrapper + p {
+  margin: 52px 0 24px 0;
+}
+
+.our-team button {
+  padding: 10px 14px;
+}
+
+
+/* Стили our-works */
+
+.our-works {  
+  max-width: 1600px;
+  margin: auto;
+  color: black;
+  text-align: center;
+}
+
+.our-works-nav {
+  width: 940px;          
+  margin: 64px auto;
+  text-align: left;
+}
+
+.our-works-nav h2 {
+  float: left;
+}
+
+.our-works-nav a {  
+  float: right;
+  margin-top: 5px;  
+  color: inherit;
+}
+
+.our-works-img {
+  float: right;
+  width: 9px;
+  height: 13px;
+  margin: 2px 0 0 8px;
+  background-position: -347px 0;
+}
+
+.gallery {
+  display: block;
+  font-size: 0;
+  letter-spacing: 0;
+}
+
+.img {
+  display: inline-block;
+  width: 16.6666%;
+  height: 200px;
+  background-color: #b6b6b6;
+}
+
+.first-line .img:nth-child(2n) {  
+  background-color: #a4a4a4;
+}
+
+.second-line .img:nth-child(2n+1) {  
+  background-color: #a4a4a4;
+}
+
+.gallery button {
+  margin: 70px 0 75px 0;
+  padding: 8px 26px;
+}
+
+
+/* Стили footer */
+
+footer {  
+  width: 1600px;
+  height: 400px;
+  margin: auto;
+  text-align: center;
+  background: url("http://i.cubeupload.com/oyLK9y.jpg") no-repeat;
+}
+
+.footer-overlay {
+  height: 400px;
+}
+
+.footer-wrapper {
+  position: relative; 
+  width: 940px;
+  height: 100%; 
+  margin: auto;
+  padding-top: 72px;
+  line-height: 26px;
+}
+
+.footer-wrapper h3 {
+  margin-bottom: 35px;
+  font-size: 15px;
+}
+
+.footer-wrapper p {
+  letter-spacing: 0.025em;
+}
+
+.about,
+.contacts {
+  float: left;
+  width: 300px;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.links {
+  float: right;
+  width: 290px;
+  text-align: left;
+}
+
+.footer-wrapper .logo {
+  margin-bottom: 23px;
+}
+
+.footer-discr {
+  clear: both;
+}
+
+.geopoint {
+  float: left;
+  width: 15px;
+  height: 20px;
+  background-position: -347px -31px;
+}
+
+.geopoint + p,
+.phone + p {
+  margin-left: 30px;
+}
+
+.phone + p {
+  margin-top: -4px;
+}
+
+.phone {
+  float: left;
+  width: 17px;
+  height: 20px;
+  margin-top: -4px;
+  background-position: -366px -31px;
+}
+
+.contacts a {
+  color: white;
+}
+
+.contacts a:hover {
+  color: #00e0d0;
+}
+
+.email {
+  width: 210px; 
+  height: 45px; 
+  margin-right: 10px;
+  font: 300 14px "Roboto", "Helvetica", sans-serif; 
+  text-align: center;
+  letter-spacing: 0.050em;
+  color: white;
+  background: none; 
+  border: 1px solid rgba(255, 255, 255, 0.62); 
+  outline: none; 
+}
+
+.email::-webkit-input-placeholder {  
+  color: rgba(255, 255, 255, 0.75); 
+}
+
+.email:-ms-input-placeholder {  
+  color: rgba(255, 255, 255, 0.75); 
+}
+
+.email::-ms-input-placeholder {  
+  color: rgba(255, 255, 255, 0.75); 
+}
+
+.email::placeholder {  
+  color: rgba(255, 255, 255, 0.75); 
+} 
+
+.email-btn { 
+  width: 70px; 
+  height: 45px; 
+  text-align: center;
+  color: white;
+  background: rgba(245, 244, 246, 0.5) url("http://u.cubeupload.com/Stegur/buttonimg.png") 50% 50% no-repeat;
+  background-size: 25px 25px;
+  border: 1px solid rgba(245, 244, 246, 0); 
+  outline: none;
+}
+
+.fb,
+.twitter,
+.bb,
+.instagram,
+.google,
+.youtube {
+  width: 35px;
+  height: 35px;
+  margin: 28px 4px 0 0;
+}
+
+.fb {
+  background-position: -390px 0;
+}
+
+.twitter {
+  background-position: -430px 0;
+}
+
+.bb {
+  background-position: -470px 0;
+}
+
+.instagram {
+  background-position: -510px 0;
+}
+
+.google {
+  background-position: -550px 0;
+}
+
+.youtube {
+  background-position: -590px 0;
+}
+
+.terms {
+  float: left;
+  margin-top: 23px;
+  padding: 0;
+}
+
+.terms .menu ul {
+  padding: 0;
+}
+
+.terms .menu ul li {
+  margin: 0 35px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+}
+
+.copyright {
+  float: right;
+  margin-top: 42px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+}
